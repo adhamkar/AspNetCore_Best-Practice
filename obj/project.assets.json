@@ -47,6 +47,19 @@
           }
         }
       },
+      "Google.Protobuf/3.27.1": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -57,6 +70,30 @@
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "LightGBM/3.3.5": {
+        "type": "package",
+        "build": {
+          "build/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/lib_lightgbm.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-x64/native/lib_lightgbm.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/lib_lightgbm.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/lightgbm.exe": {
+            "assetType": "native",
+            "rid": "win-x64"
           }
         }
       },
@@ -130,6 +167,22 @@
           }
         }
       },
+      "Microsoft.Bcl.Memory/9.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.Bcl.Memory.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Bcl.Memory.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
       "Microsoft.Build.Framework/17.8.3": {
         "type": "package",
         "compile": {
@@ -162,16 +215,16 @@
           "buildTransitive/Microsoft.CodeAnalysis.Analyzers.targets": {}
         }
       },
-      "Microsoft.CodeAnalysis.Common/4.8.0": {
+      "Microsoft.CodeAnalysis.Common/4.9.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.CodeAnalysis.Analyzers": "3.3.4",
-          "System.Collections.Immutable": "7.0.0",
-          "System.Reflection.Metadata": "7.0.0",
+          "System.Collections.Immutable": "8.0.0",
+          "System.Reflection.Metadata": "8.0.0",
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/net7.0/_._": {
+          "lib/net7.0/Microsoft.CodeAnalysis.dll": {
             "related": ".pdb;.xml"
           }
         },
@@ -222,13 +275,13 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.CSharp/4.8.0": {
+      "Microsoft.CodeAnalysis.CSharp/4.9.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[4.8.0]"
+          "Microsoft.CodeAnalysis.Common": "[4.9.2]"
         },
         "compile": {
-          "lib/net7.0/_._": {
+          "lib/net7.0/Microsoft.CodeAnalysis.CSharp.dll": {
             "related": ".pdb;.xml"
           }
         },
@@ -986,6 +1039,692 @@
           }
         }
       },
+      "Microsoft.ML/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ML.CpuMath": "4.0.1",
+          "Microsoft.ML.DataView": "4.0.1",
+          "Newtonsoft.Json": "13.0.3",
+          "System.CodeDom": "8.0.0",
+          "System.Collections.Immutable": "8.0.0",
+          "System.Memory": "4.6.0",
+          "System.Reflection.Emit.Lightweight": "4.7.0",
+          "System.Threading.Channels": "8.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Microsoft.ML.Data.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Microsoft.ML.KMeansClustering.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Microsoft.ML.PCA.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Microsoft.ML.StandardTrainers.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Microsoft.ML.Transforms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Microsoft.ML.Data.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Microsoft.ML.KMeansClustering.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Microsoft.ML.PCA.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Microsoft.ML.StandardTrainers.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Microsoft.ML.Transforms.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/netstandard2.0/Microsoft.ML.props": {},
+          "build/netstandard2.0/Microsoft.ML.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libLdaNative.so": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm/native/libLdaNative.so.dbg": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm64/native/libLdaNative.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-arm64/native/libLdaNative.so.dbg": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libLdaNative.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libLdaNative.so.dbg": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-arm64/native/libLdaNative.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-arm64/native/libLdaNative.dylib.dwarf": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libLdaNative.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/osx-x64/native/libLdaNative.dylib.dwarf": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-arm64/native/LdaNative.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/LdaNative.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/LdaNative.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Microsoft.ML.AutoML/0.22.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CodeAnalysis.CSharp": "4.9.2",
+          "Microsoft.Extensions.DependencyInjection": "8.0.0",
+          "Microsoft.ML": "4.0.1",
+          "Microsoft.ML.CpuMath": "4.0.1",
+          "Microsoft.ML.DnnImageFeaturizer.AlexNet": "0.22.1",
+          "Microsoft.ML.DnnImageFeaturizer.ResNet101": "0.22.1",
+          "Microsoft.ML.DnnImageFeaturizer.ResNet18": "0.22.1",
+          "Microsoft.ML.DnnImageFeaturizer.ResNet50": "0.22.1",
+          "Microsoft.ML.ImageAnalytics": "4.0.1",
+          "Microsoft.ML.LightGbm": "4.0.1",
+          "Microsoft.ML.Mkl.Components": "4.0.1",
+          "Microsoft.ML.OnnxTransformer": "4.0.1",
+          "Microsoft.ML.Recommender": "0.22.1",
+          "Microsoft.ML.TimeSeries": "4.0.1",
+          "Microsoft.ML.TorchSharp": "0.22.1",
+          "Microsoft.ML.Vision": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.AutoML.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Microsoft.ML.SearchSpace.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.AutoML.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Microsoft.ML.SearchSpace.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.ML.CpuMath/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Tensors": "8.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.ML.CpuMath.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.ML.CpuMath.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/netstandard2.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/nativeassets/net6.0/_._": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm64/nativeassets/net6.0/_._": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/nativeassets/net6.0/_._": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-arm64/nativeassets/net6.0/_._": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/nativeassets/net6.0/_._": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-arm64/nativeassets/net6.0/_._": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/nativeassets/net6.0/_._": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/nativeassets/net6.0/_._": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Microsoft.ML.DataView/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "8.0.0",
+          "System.Memory": "4.6.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.DataView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.DataView.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.ML.DnnImageFeaturizer.AlexNet/0.22.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ML.OnnxTransformer": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.AlexNet.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.AlexNet.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/netstandard2.0/_._": {}
+        }
+      },
+      "Microsoft.ML.DnnImageFeaturizer.ResNet101/0.22.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ML.OnnxTransformer": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.ResNet101.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.ResNet101.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/netstandard2.0/_._": {}
+        }
+      },
+      "Microsoft.ML.DnnImageFeaturizer.ResNet18/0.22.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ML.OnnxTransformer": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.ResNet18.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.ResNet18.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/netstandard2.0/_._": {}
+        }
+      },
+      "Microsoft.ML.DnnImageFeaturizer.ResNet50/0.22.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ML.OnnxTransformer": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.ResNet50.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.ResNet50.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/netstandard2.0/_._": {}
+        }
+      },
+      "Microsoft.ML.FastTree/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ML": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.FastTree.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.FastTree.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/netstandard2.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libFastTreeNative.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libFastTreeNative.so.dbg": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-x64/native/libFastTreeNative.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/osx-x64/native/libFastTreeNative.dylib.dwarf": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/FastTreeNative.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/FastTreeNative.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Microsoft.ML.ImageAnalytics/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ML": "4.0.1",
+          "SkiaSharp": "2.88.8",
+          "SkiaSharp.NativeAssets.Linux.NoDependencies": "2.88.8",
+          "System.Buffers": "4.6.0",
+          "System.Runtime.CompilerServices.Unsafe": "6.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.ImageAnalytics.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.ImageAnalytics.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.ML.LightGbm/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "LightGBM": "3.3.5",
+          "Microsoft.ML": "4.0.1",
+          "Microsoft.ML.FastTree": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.LightGbm.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.LightGbm.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.ML.Mkl.Components/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ML": "4.0.1",
+          "Microsoft.ML.Mkl.Redist": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.Mkl.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.Mkl.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/netstandard2.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libSymSgdNative.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libSymSgdNative.so.dbg": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-x64/native/libSymSgdNative.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/osx-x64/native/libSymSgdNative.dylib.dwarf": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/SymSgdNative.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/SymSgdNative.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Microsoft.ML.Mkl.Redist/4.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "build": {
+          "build/netstandard2.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libMklImports.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libMklProxyNative.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libMklProxyNative.so.dbg": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-x64/native/libMklImports.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/osx-x64/native/libMklProxyNative.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/osx-x64/native/libMklProxyNative.dylib.dwarf": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/MklImports.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/MklProxyNative.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/libiomp5md.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/MklImports.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/MklProxyNative.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/libiomp5md.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Microsoft.ML.OnnxRuntime.Managed/1.18.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.5"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.ML.OnnxRuntime.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.ML.OnnxRuntime.dll": {
+            "related": ".pdb"
+          }
+        },
+        "build": {
+          "build/netstandard2.0/_._": {}
+        }
+      },
+      "Microsoft.ML.OnnxTransformer/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.27.1",
+          "Microsoft.ML": "4.0.1",
+          "Microsoft.ML.OnnxRuntime.Managed": "1.18.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.OnnxTransformer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.OnnxTransformer.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.ML.Recommender/0.22.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ML": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.Recommender.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.Recommender.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/netstandard2.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libMatrixFactorizationNative.so": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm/native/libMatrixFactorizationNative.so.dbg": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm64/native/libMatrixFactorizationNative.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-arm64/native/libMatrixFactorizationNative.so.dbg": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libMatrixFactorizationNative.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libMatrixFactorizationNative.so.dbg": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-arm64/native/libMatrixFactorizationNative.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-arm64/native/libMatrixFactorizationNative.dylib.dwarf": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libMatrixFactorizationNative.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/osx-x64/native/libMatrixFactorizationNative.dylib.dwarf": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-arm64/native/MatrixFactorizationNative.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/MatrixFactorizationNative.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/MatrixFactorizationNative.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Microsoft.ML.TensorFlow/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.27.1",
+          "Microsoft.ML": "4.0.1",
+          "System.IO.FileSystem.AccessControl": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0",
+          "TensorFlow.NET": "0.20.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.TensorFlow.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.TensorFlow.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.ML.TimeSeries/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ML": "4.0.1",
+          "Microsoft.ML.Mkl.Redist": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.TimeSeries.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.TimeSeries.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.ML.Tokenizers/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.27.1",
+          "System.Text.Json": "8.0.5"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.ML.Tokenizers.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.ML.Tokenizers.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.ML.TorchSharp/0.22.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.Memory": "9.0.0",
+          "Microsoft.ML": "4.0.1",
+          "Microsoft.ML.ImageAnalytics": "4.0.1",
+          "Microsoft.ML.Tokenizers": "1.0.1",
+          "System.Memory": "4.6.0",
+          "TorchSharp": "0.102.7"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.TorchSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.TorchSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.ML.Vision/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ML.TensorFlow": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.Vision.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.Vision.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
@@ -1096,6 +1835,132 @@
           }
         }
       },
+      "NumSharp.Lite/0.1.8": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/NumSharp.Lite.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/NumSharp.Lite.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Protobuf.Text/0.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.11.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Protobuf.Text.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Protobuf.Text.dll": {}
+        }
+      },
+      "SharpZipLib/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/ICSharpCode.SharpZipLib.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ICSharpCode.SharpZipLib.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp/2.88.8": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp.NativeAssets.Win32": "2.88.8",
+          "SkiaSharp.NativeAssets.macOS": "2.88.8"
+        },
+        "compile": {
+          "lib/net6.0/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.Linux.NoDependencies/2.88.8": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.8"
+        },
+        "compile": {
+          "lib/net6.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm64/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-musl-x64/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-x64/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.macOS/2.88.8": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/osx/native/libSkiaSharp.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.Win32/2.88.8": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/6.6.2": {
         "type": "package",
         "dependencies": {
@@ -1159,6 +2024,15 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "System.Buffers/4.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
       "System.ClientModel/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -1176,31 +2050,31 @@
           }
         }
       },
-      "System.CodeDom/6.0.0": {
+      "System.CodeDom/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net8.0/System.CodeDom.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/System.CodeDom.dll": {
+          "lib/net8.0/System.CodeDom.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "buildTransitive/net6.0/_._": {}
         }
       },
-      "System.Collections.Immutable/7.0.0": {
+      "System.Collections.Immutable/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/_._": {
+          "lib/net8.0/System.Collections.Immutable.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/System.Collections.Immutable.dll": {
+          "lib/net8.0/System.Collections.Immutable.dll": {
             "related": ".xml"
           }
         },
@@ -1423,6 +2297,29 @@
           }
         }
       },
+      "System.IO.FileSystem.AccessControl/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.AccessControl": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.IO.FileSystem.AccessControl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.IO.FileSystem.AccessControl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.IO.FileSystem.AccessControl.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.IO.Pipelines/9.0.1": {
         "type": "package",
         "compile": {
@@ -1439,10 +2336,10 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "System.Memory/4.5.4": {
+      "System.Memory/4.6.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp2.1/_._": {}
+          "lib/netcoreapp2.1/_._": {}
         },
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
@@ -1465,6 +2362,22 @@
           }
         }
       },
+      "System.Numerics.Tensors/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Numerics.Tensors.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Numerics.Tensors.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
@@ -1474,18 +2387,27 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "System.Reflection.Metadata/7.0.0": {
+      "System.Reflection.Emit.Lightweight/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "System.Reflection.Metadata/8.0.0": {
         "type": "package",
         "dependencies": {
-          "System.Collections.Immutable": "7.0.0"
+          "System.Collections.Immutable": "8.0.0"
         },
         "compile": {
-          "lib/net7.0/_._": {
+          "lib/net8.0/System.Reflection.Metadata.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/System.Reflection.Metadata.dll": {
+          "lib/net8.0/System.Reflection.Metadata.dll": {
             "related": ".xml"
           }
         },
@@ -1530,26 +2452,22 @@
           }
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "System.Runtime.CompilerServices.Unsafe/6.1.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/_._": {
-            "related": ".xml"
-          }
+          "lib/net7.0/_._": {}
         },
         "runtime": {
-          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
+          "lib/net7.0/_._": {}
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "System.Security.AccessControl/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net6.0/System.Security.AccessControl.dll": {
             "related": ".xml"
           }
         },
@@ -1635,7 +2553,7 @@
       "System.Security.Principal.Windows/5.0.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/_._": {
+          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {
             "related": ".xml"
           }
         },
@@ -1735,15 +2653,15 @@
           "buildTransitive/net8.0/System.Text.Json.targets": {}
         }
       },
-      "System.Threading.Channels/7.0.0": {
+      "System.Threading.Channels/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/_._": {
+          "lib/net8.0/System.Threading.Channels.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/System.Threading.Channels.dll": {
+          "lib/net8.0/System.Threading.Channels.dll": {
             "related": ".xml"
           }
         },
@@ -1779,6 +2697,65 @@
           "runtimes/win/lib/net6.0/System.Windows.Extensions.dll": {
             "assetType": "runtime",
             "rid": "win"
+          }
+        }
+      },
+      "TensorFlow.NET/0.20.1": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.11.4",
+          "NumSharp.Lite": "0.1.8",
+          "Protobuf.Text": "0.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/TensorFlow.NET.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/TensorFlow.NET.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "TorchSharp/0.102.7": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.21.9",
+          "SharpZipLib": "1.4.0",
+          "SkiaSharp": "2.88.6",
+          "System.Memory": "4.5.5"
+        },
+        "compile": {
+          "lib/net6.0/TorchSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/TorchSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/TorchSharp.props": {},
+          "buildTransitive/net6.0/TorchSharp.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libLibTorchSharp.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-arm64/native/libLibTorchSharp.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libLibTorchSharp.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/LibTorchSharp.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
           }
         }
       }
@@ -1823,6 +2800,29 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
+    "Google.Protobuf/3.27.1": {
+      "sha512": "7IVz9TzhYCZ8qY0rPhXUnyJSXYdshUqmmxmTI763XmDDSJJFnyfKH43FFcMJu/CZgBcE98xlFztrKwhzcRkiPg==",
+      "type": "package",
+      "path": "google.protobuf/3.27.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "google.protobuf.3.27.1.nupkg.sha512",
+        "google.protobuf.nuspec",
+        "lib/net45/Google.Protobuf.dll",
+        "lib/net45/Google.Protobuf.pdb",
+        "lib/net45/Google.Protobuf.xml",
+        "lib/net5.0/Google.Protobuf.dll",
+        "lib/net5.0/Google.Protobuf.pdb",
+        "lib/net5.0/Google.Protobuf.xml",
+        "lib/netstandard1.1/Google.Protobuf.dll",
+        "lib/netstandard1.1/Google.Protobuf.pdb",
+        "lib/netstandard1.1/Google.Protobuf.xml",
+        "lib/netstandard2.0/Google.Protobuf.dll",
+        "lib/netstandard2.0/Google.Protobuf.pdb",
+        "lib/netstandard2.0/Google.Protobuf.xml"
+      ]
+    },
     "Humanizer.Core/2.14.1": {
       "sha512": "lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "type": "package",
@@ -1839,6 +2839,23 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "LightGBM/3.3.5": {
+      "sha512": "6LwKO13R9q8zZHbYNeHhayUj3/sN410L6B9QZfV/tyzuoaddur1Uy0yV0gK4FfLl3FVC0LxnfiCOrHva0xX3yQ==",
+      "type": "package",
+      "path": "lightgbm/3.3.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/LightGBM.props",
+        "build/LightGBM.targets",
+        "lightgbm.3.3.5.nupkg.sha512",
+        "lightgbm.nuspec",
+        "runtimes/linux-x64/native/lib_lightgbm.so",
+        "runtimes/osx-x64/native/lib_lightgbm.dylib",
+        "runtimes/win-x64/native/lib_lightgbm.dll",
+        "runtimes/win-x64/native/lightgbm.exe"
       ]
     },
     "Microsoft.AspNetCore.JsonPatch/8.0.6": {
@@ -1910,6 +2927,36 @@
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
         "microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
         "microsoft.bcl.asyncinterfaces.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Bcl.Memory/9.0.0": {
+      "sha512": "bTUtGfpGyJnohQzjdXbtc7MqNzkv7CWUSRz54+ucNm0i32rZiIU0VdVPHDBShOl1qhVKRjW8mnEBz3d2vH93tQ==",
+      "type": "package",
+      "path": "microsoft.bcl.memory/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Bcl.Memory.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Bcl.Memory.targets",
+        "lib/net462/Microsoft.Bcl.Memory.dll",
+        "lib/net462/Microsoft.Bcl.Memory.xml",
+        "lib/net8.0/Microsoft.Bcl.Memory.dll",
+        "lib/net8.0/Microsoft.Bcl.Memory.xml",
+        "lib/net9.0/Microsoft.Bcl.Memory.dll",
+        "lib/net9.0/Microsoft.Bcl.Memory.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.Memory.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.Memory.xml",
+        "lib/netstandard2.1/Microsoft.Bcl.Memory.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.Memory.xml",
+        "microsoft.bcl.memory.9.0.0.nupkg.sha512",
+        "microsoft.bcl.memory.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -2556,10 +3603,10 @@
         "tools/uninstall.ps1"
       ]
     },
-    "Microsoft.CodeAnalysis.Common/4.8.0": {
-      "sha512": "/jR+e/9aT+BApoQJABlVCKnnggGQbvGh7BKq2/wI1LamxC+LbzhcLj4Vj7gXCofl1n4E521YfF9w0WcASGg/KA==",
+    "Microsoft.CodeAnalysis.Common/4.9.2": {
+      "sha512": "M5PThug7b2AdxL7xKmQs50KzAQTl9jENw5jMT3iUt16k+DAFlw1S87juU3UuPs3gvBm8trMBSOEvSFDr31c9Vw==",
       "type": "package",
-      "path": "microsoft.codeanalysis.common/4.8.0",
+      "path": "microsoft.codeanalysis.common/4.9.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2613,14 +3660,14 @@
         "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.resources.dll",
         "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
         "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
-        "microsoft.codeanalysis.common.4.8.0.nupkg.sha512",
+        "microsoft.codeanalysis.common.4.9.2.nupkg.sha512",
         "microsoft.codeanalysis.common.nuspec"
       ]
     },
-    "Microsoft.CodeAnalysis.CSharp/4.8.0": {
-      "sha512": "+3+qfdb/aaGD8PZRCrsdobbzGs1m9u119SkkJt8e/mk3xLJz/udLtS2T6nY27OTXxBBw10HzAbC8Z9w08VyP/g==",
+    "Microsoft.CodeAnalysis.CSharp/4.9.2": {
+      "sha512": "HGIo7E9Mf3exAJbUdYpDFfLoYkSVaHDJXPyusWTYUTBaOPCowGw+Gap5McE1w+K+ryIXre72oiqL88sQHmHBmg==",
       "type": "package",
-      "path": "microsoft.codeanalysis.csharp/4.8.0",
+      "path": "microsoft.codeanalysis.csharp/4.9.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2674,7 +3721,7 @@
         "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
         "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
         "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "microsoft.codeanalysis.csharp.4.8.0.nupkg.sha512",
+        "microsoft.codeanalysis.csharp.4.9.2.nupkg.sha512",
         "microsoft.codeanalysis.csharp.nuspec"
       ]
     },
@@ -3886,6 +4933,464 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
+    "Microsoft.ML/4.0.1": {
+      "sha512": "qM+obKoHq57Vj+RWNfkGjcMNpnIB5aCUIkztJ3o380ZdS+WsNG9oL4/1XY06R5EGweEUKznaeqdtDEq/pdWjUA==",
+      "type": "package",
+      "path": "microsoft.ml/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/netstandard2.0/Microsoft.ML.props",
+        "build/netstandard2.0/Microsoft.ML.targets",
+        "lib/netstandard2.0/Microsoft.ML.Core.dll",
+        "lib/netstandard2.0/Microsoft.ML.Core.xml",
+        "lib/netstandard2.0/Microsoft.ML.Data.dll",
+        "lib/netstandard2.0/Microsoft.ML.Data.xml",
+        "lib/netstandard2.0/Microsoft.ML.KMeansClustering.dll",
+        "lib/netstandard2.0/Microsoft.ML.KMeansClustering.xml",
+        "lib/netstandard2.0/Microsoft.ML.PCA.dll",
+        "lib/netstandard2.0/Microsoft.ML.PCA.xml",
+        "lib/netstandard2.0/Microsoft.ML.StandardTrainers.dll",
+        "lib/netstandard2.0/Microsoft.ML.StandardTrainers.xml",
+        "lib/netstandard2.0/Microsoft.ML.Transforms.dll",
+        "lib/netstandard2.0/Microsoft.ML.Transforms.xml",
+        "microsoft.ml.4.0.1.nupkg.sha512",
+        "microsoft.ml.nuspec",
+        "mlnetlogo.png",
+        "runtimes/linux-arm/native/libLdaNative.so",
+        "runtimes/linux-arm/native/libLdaNative.so.dbg",
+        "runtimes/linux-arm64/native/libLdaNative.so",
+        "runtimes/linux-arm64/native/libLdaNative.so.dbg",
+        "runtimes/linux-x64/native/libLdaNative.so",
+        "runtimes/linux-x64/native/libLdaNative.so.dbg",
+        "runtimes/osx-arm64/native/libLdaNative.dylib",
+        "runtimes/osx-arm64/native/libLdaNative.dylib.dwarf",
+        "runtimes/osx-x64/native/libLdaNative.dylib",
+        "runtimes/osx-x64/native/libLdaNative.dylib.dwarf",
+        "runtimes/win-arm64/native/LdaNative.dll",
+        "runtimes/win-x64/native/LdaNative.dll",
+        "runtimes/win-x86/native/LdaNative.dll"
+      ]
+    },
+    "Microsoft.ML.AutoML/0.22.1": {
+      "sha512": "pW4tYhN25gizgN/25lamIwVO6GaTIDVJJjotfwokSdWkX4eCuhM1q6wHfB/AjV69VM/EBFOrgtbORFSj9Syucw==",
+      "type": "package",
+      "path": "microsoft.ml.automl/0.22.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.TXT",
+        "interactive-extensions/dotnet/Microsoft.ML.AutoML.Interactive.dll",
+        "interactive-extensions/dotnet/Microsoft.ML.AutoML.Interactive.xml",
+        "lib/netstandard2.0/Microsoft.ML.AutoML.dll",
+        "lib/netstandard2.0/Microsoft.ML.AutoML.xml",
+        "lib/netstandard2.0/Microsoft.ML.SearchSpace.dll",
+        "lib/netstandard2.0/Microsoft.ML.SearchSpace.xml",
+        "microsoft.ml.automl.0.22.1.nupkg.sha512",
+        "microsoft.ml.automl.nuspec",
+        "mlnetlogo.png"
+      ]
+    },
+    "Microsoft.ML.CpuMath/4.0.1": {
+      "sha512": "jO95llfbGSli/rD1hA2dWqdRCJ6YITkr6ksdGEPG7Ra6nMueL+e+fpn4N2mjjgmGRKIuDcmyOMfSnFy9jRcBaQ==",
+      "type": "package",
+      "path": "microsoft.ml.cpumath/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/netstandard2.0/Microsoft.ML.CpuMath.props",
+        "lib/net6.0/Microsoft.ML.CpuMath.dll",
+        "lib/net6.0/Microsoft.ML.CpuMath.xml",
+        "lib/netstandard2.0/Microsoft.ML.CpuMath.dll",
+        "lib/netstandard2.0/Microsoft.ML.CpuMath.xml",
+        "microsoft.ml.cpumath.4.0.1.nupkg.sha512",
+        "microsoft.ml.cpumath.nuspec",
+        "mlnetlogo.png",
+        "runtimes/linux-arm/nativeassets/net6.0/_._",
+        "runtimes/linux-arm64/nativeassets/net6.0/_._",
+        "runtimes/linux-x64/nativeassets/net6.0/_._",
+        "runtimes/linux-x64/nativeassets/netstandard2.0/libCpuMathNative.so",
+        "runtimes/linux-x64/nativeassets/netstandard2.0/libCpuMathNative.so.dbg",
+        "runtimes/osx-arm64/nativeassets/net6.0/_._",
+        "runtimes/osx-x64/nativeassets/net6.0/_._",
+        "runtimes/osx-x64/nativeassets/netstandard2.0/libCpuMathNative.dylib",
+        "runtimes/osx-x64/nativeassets/netstandard2.0/libCpuMathNative.dylib.dwarf",
+        "runtimes/win-arm64/nativeassets/net6.0/_._",
+        "runtimes/win-x64/nativeassets/net6.0/_._",
+        "runtimes/win-x64/nativeassets/netstandard2.0/CpuMathNative.dll",
+        "runtimes/win-x86/nativeassets/net6.0/_._",
+        "runtimes/win-x86/nativeassets/netstandard2.0/CpuMathNative.dll"
+      ]
+    },
+    "Microsoft.ML.DataView/4.0.1": {
+      "sha512": "feP1sRBwrU6SOld/DbMIjo4liBxcoOVpKntIN3vQLSpJDyoLTJouFMxVIQhJiFlw/t00Zx94FBCmdeZGGeL6/w==",
+      "type": "package",
+      "path": "microsoft.ml.dataview/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard2.0/Microsoft.ML.DataView.dll",
+        "lib/netstandard2.0/Microsoft.ML.DataView.xml",
+        "microsoft.ml.dataview.4.0.1.nupkg.sha512",
+        "microsoft.ml.dataview.nuspec",
+        "mlnetlogo.png"
+      ]
+    },
+    "Microsoft.ML.DnnImageFeaturizer.AlexNet/0.22.1": {
+      "sha512": "mo2EioJj06P2/2zV/8KRkbvk+RB26fwBqwaxtflKcJbO/RyR/rM1NUX3KFkjGrv2pFHJ16VmN2DdzT2nSj93ZA==",
+      "type": "package",
+      "path": "microsoft.ml.dnnimagefeaturizer.alexnet/0.22.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.AlexNet.props",
+        "lib/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.AlexNet.dll",
+        "lib/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.AlexNet.xml",
+        "microsoft.ml.dnnimagefeaturizer.alexnet.0.22.1.nupkg.sha512",
+        "microsoft.ml.dnnimagefeaturizer.alexnet.nuspec",
+        "mlnetlogo.png",
+        "tools/DnnImageModels/AlexNetOnnx/AlexNet.onnx",
+        "tools/DnnImageModels/AlexNetPrepOnnx/AlexNetPreprocess.onnx"
+      ]
+    },
+    "Microsoft.ML.DnnImageFeaturizer.ResNet101/0.22.1": {
+      "sha512": "6NLMKSqBKocDLnJKuop64IFyTL8OL3cVyKv9IA/mY0K0W3ivcSuKDpuvu29sNlGKlP3QKUjeAPt81m0XKY1qhQ==",
+      "type": "package",
+      "path": "microsoft.ml.dnnimagefeaturizer.resnet101/0.22.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.ResNet101.props",
+        "lib/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.ResNet101.dll",
+        "lib/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.ResNet101.xml",
+        "microsoft.ml.dnnimagefeaturizer.resnet101.0.22.1.nupkg.sha512",
+        "microsoft.ml.dnnimagefeaturizer.resnet101.nuspec",
+        "mlnetlogo.png",
+        "tools/DnnImageModels/ResNet101Onnx/ResNet101.onnx",
+        "tools/DnnImageModels/ResNetPrepOnnx/ResNetPreprocess.onnx"
+      ]
+    },
+    "Microsoft.ML.DnnImageFeaturizer.ResNet18/0.22.1": {
+      "sha512": "aMvQz8uJBrhzOoHq+sij66bUbRDi04perRAj44ddItI/H9nM/jgd2JpWGP1uoK4WG+RXkeyjNxJnt2fBQyMX6A==",
+      "type": "package",
+      "path": "microsoft.ml.dnnimagefeaturizer.resnet18/0.22.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.ResNet18.props",
+        "lib/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.ResNet18.dll",
+        "lib/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.ResNet18.xml",
+        "microsoft.ml.dnnimagefeaturizer.resnet18.0.22.1.nupkg.sha512",
+        "microsoft.ml.dnnimagefeaturizer.resnet18.nuspec",
+        "mlnetlogo.png",
+        "tools/DnnImageModels/ResNet18Onnx/ResNet18.onnx",
+        "tools/DnnImageModels/ResNetPrepOnnx/ResNetPreprocess.onnx"
+      ]
+    },
+    "Microsoft.ML.DnnImageFeaturizer.ResNet50/0.22.1": {
+      "sha512": "DC1/o5iSl21CCYoE5MJlfiTtD/vYB81Z6jhiNNp+O4J13AJIZQMKp9T/KMlma9TorzuzQ+OB2dZBqfAzPzuRWg==",
+      "type": "package",
+      "path": "microsoft.ml.dnnimagefeaturizer.resnet50/0.22.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.ResNet50.props",
+        "lib/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.ResNet50.dll",
+        "lib/netstandard2.0/Microsoft.ML.DnnImageFeaturizer.ResNet50.xml",
+        "microsoft.ml.dnnimagefeaturizer.resnet50.0.22.1.nupkg.sha512",
+        "microsoft.ml.dnnimagefeaturizer.resnet50.nuspec",
+        "mlnetlogo.png",
+        "tools/DnnImageModels/ResNet50Onnx/ResNet50.onnx",
+        "tools/DnnImageModels/ResNetPrepOnnx/ResNetPreprocess.onnx"
+      ]
+    },
+    "Microsoft.ML.FastTree/4.0.1": {
+      "sha512": "1bPKTMQohuob06CzmDwvTA6/djvz5jdf5EEV/bD5zdyRdDWHAWA07MkxE2GhgIXnIU13RlLUwZdxmsrtrQ044Q==",
+      "type": "package",
+      "path": "microsoft.ml.fasttree/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/netstandard2.0/Microsoft.ML.FastTree.props",
+        "lib/netstandard2.0/Microsoft.ML.FastTree.dll",
+        "lib/netstandard2.0/Microsoft.ML.FastTree.xml",
+        "microsoft.ml.fasttree.4.0.1.nupkg.sha512",
+        "microsoft.ml.fasttree.nuspec",
+        "mlnetlogo.png",
+        "runtimes/linux-x64/native/libFastTreeNative.so",
+        "runtimes/linux-x64/native/libFastTreeNative.so.dbg",
+        "runtimes/osx-x64/native/libFastTreeNative.dylib",
+        "runtimes/osx-x64/native/libFastTreeNative.dylib.dwarf",
+        "runtimes/win-x64/native/FastTreeNative.dll",
+        "runtimes/win-x86/native/FastTreeNative.dll"
+      ]
+    },
+    "Microsoft.ML.ImageAnalytics/4.0.1": {
+      "sha512": "+AhMRRja4+m4fm87nRgUkSkOsk5iD/vsuLH3uS3WgFBrt/Gudx92mIPc03Fznc1lQ8z7mcVwlOtmQTEWa2+OMw==",
+      "type": "package",
+      "path": "microsoft.ml.imageanalytics/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard2.0/Microsoft.ML.ImageAnalytics.dll",
+        "lib/netstandard2.0/Microsoft.ML.ImageAnalytics.xml",
+        "microsoft.ml.imageanalytics.4.0.1.nupkg.sha512",
+        "microsoft.ml.imageanalytics.nuspec",
+        "mlnetlogo.png"
+      ]
+    },
+    "Microsoft.ML.LightGbm/4.0.1": {
+      "sha512": "PouwdryXtDFbZUHCTQ09dyTTRYBSwHp21rvlF4yDqQ+XJ3SgxP924u64dMCZPOvb9pjbi0HvGbMhc4PW/m8h0Q==",
+      "type": "package",
+      "path": "microsoft.ml.lightgbm/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard2.0/Microsoft.ML.LightGbm.dll",
+        "lib/netstandard2.0/Microsoft.ML.LightGbm.xml",
+        "microsoft.ml.lightgbm.4.0.1.nupkg.sha512",
+        "microsoft.ml.lightgbm.nuspec",
+        "mlnetlogo.png"
+      ]
+    },
+    "Microsoft.ML.Mkl.Components/4.0.1": {
+      "sha512": "8c4AuuaRxb+HkmX7MwhwZP1fZ7DeD/4mQHtYin3/udcNHR5k1QUk2cJl5pjFWqYwZYzUOalXXgsDBoiO62YE0Q==",
+      "type": "package",
+      "path": "microsoft.ml.mkl.components/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/netstandard2.0/Microsoft.ML.Mkl.Components.props",
+        "lib/netstandard2.0/Microsoft.ML.Mkl.Components.dll",
+        "lib/netstandard2.0/Microsoft.ML.Mkl.Components.xml",
+        "microsoft.ml.mkl.components.4.0.1.nupkg.sha512",
+        "microsoft.ml.mkl.components.nuspec",
+        "mlnetlogo.png",
+        "runtimes/linux-x64/native/libSymSgdNative.so",
+        "runtimes/linux-x64/native/libSymSgdNative.so.dbg",
+        "runtimes/osx-x64/native/libSymSgdNative.dylib",
+        "runtimes/osx-x64/native/libSymSgdNative.dylib.dwarf",
+        "runtimes/win-x64/native/SymSgdNative.dll",
+        "runtimes/win-x86/native/SymSgdNative.dll"
+      ]
+    },
+    "Microsoft.ML.Mkl.Redist/4.0.1": {
+      "sha512": "IRy5OUrxH5AJu9XvFG6IrL1mgoL0gCy9+jrlaTtKRsnnfSe/mKvo5GBvihBdwn8nirdqqV8JCWqL2QUqHVdrVg==",
+      "type": "package",
+      "path": "microsoft.ml.mkl.redist/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "build/netstandard2.0/Microsoft.ML.Mkl.Redist.props",
+        "lib/netstandard2.0/_._",
+        "microsoft.ml.mkl.redist.4.0.1.nupkg.sha512",
+        "microsoft.ml.mkl.redist.nuspec",
+        "mlnetlogo.png",
+        "runtimes/linux-x64/native/libMklImports.so",
+        "runtimes/linux-x64/native/libMklProxyNative.so",
+        "runtimes/linux-x64/native/libMklProxyNative.so.dbg",
+        "runtimes/osx-x64/native/libMklImports.dylib",
+        "runtimes/osx-x64/native/libMklProxyNative.dylib",
+        "runtimes/osx-x64/native/libMklProxyNative.dylib.dwarf",
+        "runtimes/win-x64/native/MklImports.dll",
+        "runtimes/win-x64/native/MklProxyNative.dll",
+        "runtimes/win-x64/native/libiomp5md.dll",
+        "runtimes/win-x86/native/MklImports.dll",
+        "runtimes/win-x86/native/MklProxyNative.dll",
+        "runtimes/win-x86/native/libiomp5md.dll"
+      ]
+    },
+    "Microsoft.ML.OnnxRuntime.Managed/1.18.1": {
+      "sha512": "JfbiM+//UiIlvXIGZf/45udIsJ2SUAlHNpZhtsNAzvWM6yPFy/2mCHj0LHlC6qx333Acry04MVNv0AYKVoTOUg==",
+      "type": "package",
+      "path": "microsoft.ml.onnxruntime.managed/1.18.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "ORT_icon_for_light_bg.png",
+        "Privacy.md",
+        "ThirdPartyNotices.txt",
+        "build/netstandard2.0/Microsoft.ML.OnnxRuntime.Managed.targets",
+        "lib/net6.0/Microsoft.ML.OnnxRuntime.dll",
+        "lib/net6.0/Microsoft.ML.OnnxRuntime.pdb",
+        "lib/net8.0-android34.0/Microsoft.ML.OnnxRuntime.dll",
+        "lib/net8.0-android34.0/Microsoft.ML.OnnxRuntime.pdb",
+        "lib/net8.0-android34.0/Microsoft.ML.OnnxRuntime.xml",
+        "lib/net8.0-ios17.2/Microsoft.ML.OnnxRuntime.dll",
+        "lib/net8.0-ios17.2/Microsoft.ML.OnnxRuntime.pdb",
+        "lib/net8.0-maccatalyst17.2/Microsoft.ML.OnnxRuntime.dll",
+        "lib/net8.0-maccatalyst17.2/Microsoft.ML.OnnxRuntime.pdb",
+        "lib/netstandard2.0/Microsoft.ML.OnnxRuntime.dll",
+        "lib/netstandard2.0/Microsoft.ML.OnnxRuntime.pdb",
+        "microsoft.ml.onnxruntime.managed.1.18.1.nupkg.sha512",
+        "microsoft.ml.onnxruntime.managed.nuspec"
+      ]
+    },
+    "Microsoft.ML.OnnxTransformer/4.0.1": {
+      "sha512": "rm5dGakxTV0VbJuqk71VIT2ml904rVHsVtpvKbYX9ZOqsBfVFlA7VnvRbKwqA+KFRcbW28+zrHLBtfTHQQA/6Q==",
+      "type": "package",
+      "path": "microsoft.ml.onnxtransformer/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard2.0/Microsoft.ML.OnnxTransformer.dll",
+        "lib/netstandard2.0/Microsoft.ML.OnnxTransformer.xml",
+        "microsoft.ml.onnxtransformer.4.0.1.nupkg.sha512",
+        "microsoft.ml.onnxtransformer.nuspec",
+        "mlnetlogo.png"
+      ]
+    },
+    "Microsoft.ML.Recommender/0.22.1": {
+      "sha512": "E/7a7MKnNaasw90Lup/+HAWat+5/3SJwRbmfjrBFUGE4LVPGGNDa4ornkM/+6qkf6vUWvh9KqDWN3LqmBC1oog==",
+      "type": "package",
+      "path": "microsoft.ml.recommender/0.22.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "COPYRIGHT",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/netstandard2.0/Microsoft.ML.Recommender.props",
+        "lib/netstandard2.0/Microsoft.ML.Recommender.dll",
+        "lib/netstandard2.0/Microsoft.ML.Recommender.xml",
+        "microsoft.ml.recommender.0.22.1.nupkg.sha512",
+        "microsoft.ml.recommender.nuspec",
+        "mlnetlogo.png",
+        "runtimes/linux-arm/native/libMatrixFactorizationNative.so",
+        "runtimes/linux-arm/native/libMatrixFactorizationNative.so.dbg",
+        "runtimes/linux-arm64/native/libMatrixFactorizationNative.so",
+        "runtimes/linux-arm64/native/libMatrixFactorizationNative.so.dbg",
+        "runtimes/linux-x64/native/libMatrixFactorizationNative.so",
+        "runtimes/linux-x64/native/libMatrixFactorizationNative.so.dbg",
+        "runtimes/osx-arm64/native/libMatrixFactorizationNative.dylib",
+        "runtimes/osx-arm64/native/libMatrixFactorizationNative.dylib.dwarf",
+        "runtimes/osx-x64/native/libMatrixFactorizationNative.dylib",
+        "runtimes/osx-x64/native/libMatrixFactorizationNative.dylib.dwarf",
+        "runtimes/win-arm64/native/MatrixFactorizationNative.dll",
+        "runtimes/win-x64/native/MatrixFactorizationNative.dll",
+        "runtimes/win-x86/native/MatrixFactorizationNative.dll"
+      ]
+    },
+    "Microsoft.ML.TensorFlow/4.0.1": {
+      "sha512": "eG8GqQ2VLUOBQ1mSNGt6WG1TBEQJ6VKjAqf306ya3gTtG6cyIBYWuYRN/4fGz9I7962gIEuJvbtE0FKr/1iXNw==",
+      "type": "package",
+      "path": "microsoft.ml.tensorflow/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard2.0/Microsoft.ML.TensorFlow.dll",
+        "lib/netstandard2.0/Microsoft.ML.TensorFlow.xml",
+        "microsoft.ml.tensorflow.4.0.1.nupkg.sha512",
+        "microsoft.ml.tensorflow.nuspec",
+        "mlnetlogo.png"
+      ]
+    },
+    "Microsoft.ML.TimeSeries/4.0.1": {
+      "sha512": "1CnAjb3VJQB3UcIAPm5rO3VSFv8BREnxAYaY/6H9qSodj6CpKS+M/jvYUd6rGg7xrprm27zAT+9BUZbWx2vN2A==",
+      "type": "package",
+      "path": "microsoft.ml.timeseries/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard2.0/Microsoft.ML.TimeSeries.dll",
+        "lib/netstandard2.0/Microsoft.ML.TimeSeries.xml",
+        "microsoft.ml.timeseries.4.0.1.nupkg.sha512",
+        "microsoft.ml.timeseries.nuspec",
+        "mlnetlogo.png"
+      ]
+    },
+    "Microsoft.ML.Tokenizers/1.0.1": {
+      "sha512": "9d6wyh+OSMbzh52OdBQDf9+g7yqr99bBGTACkFBorkvkgmrNoIDIVIjdGjCnAdDGLWFhD4W8L0vGZjUWQgIqjg==",
+      "type": "package",
+      "path": "microsoft.ml.tokenizers/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net8.0/Microsoft.ML.Tokenizers.dll",
+        "lib/net8.0/Microsoft.ML.Tokenizers.xml",
+        "lib/netstandard2.0/Microsoft.ML.Tokenizers.dll",
+        "lib/netstandard2.0/Microsoft.ML.Tokenizers.xml",
+        "microsoft.ml.tokenizers.1.0.1.nupkg.sha512",
+        "microsoft.ml.tokenizers.nuspec",
+        "mlnetlogo.png"
+      ]
+    },
+    "Microsoft.ML.TorchSharp/0.22.1": {
+      "sha512": "yV5EuDCRqjT5EWzQ2NeaWLer4/YXrJFUCzuDvM3JZd+EaQ/j8l849ZE4W49/zB1YNQWUCTwP16BFKU/hqh0tNw==",
+      "type": "package",
+      "path": "microsoft.ml.torchsharp/0.22.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard2.0/Microsoft.ML.TorchSharp.dll",
+        "lib/netstandard2.0/Microsoft.ML.TorchSharp.xml",
+        "microsoft.ml.torchsharp.0.22.1.nupkg.sha512",
+        "microsoft.ml.torchsharp.nuspec",
+        "mlnetlogo.png"
+      ]
+    },
+    "Microsoft.ML.Vision/4.0.1": {
+      "sha512": "6OJxRCL9IX3wWpTpS1KQXc/75rUiAi1Hlni6q0+2NP6qlrjbuSux4U0LafMytRZc6P2YIHpBIv6KmKStklbytg==",
+      "type": "package",
+      "path": "microsoft.ml.vision/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard2.0/Microsoft.ML.Vision.dll",
+        "lib/netstandard2.0/Microsoft.ML.Vision.xml",
+        "microsoft.ml.vision.4.0.1.nupkg.sha512",
+        "microsoft.ml.vision.nuspec",
+        "mlnetlogo.png"
+      ]
+    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
@@ -4046,6 +5551,198 @@
         "newtonsoft.json.bson.nuspec"
       ]
     },
+    "NumSharp.Lite/0.1.8": {
+      "sha512": "8J74SVRjrsid+26pCkRo2A1e0tWIv1R/Qvin7zDVD3Pm1C3lK0XEQXNJ7nk3Qb1jwfNYCRaXBvFJZrj0X7ocTA==",
+      "type": "package",
+      "path": "numsharp.lite/0.1.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/netstandard2.0/NumSharp.Lite.dll",
+        "lib/netstandard2.0/NumSharp.Lite.pdb",
+        "numsharp.lite.0.1.8.nupkg.sha512",
+        "numsharp.lite.nuspec"
+      ]
+    },
+    "Protobuf.Text/0.4.0": {
+      "sha512": "fg7139wyR33UUbqJjRR8LppXORUv6FyrX1ngazHyadVmjnRi0UhwReHKbpi5/54h+PcGyue/DoV3k3IKXKhO/A==",
+      "type": "package",
+      "path": "protobuf.text/0.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Protobuf.Text.dll",
+        "protobuf.text.0.4.0.nupkg.sha512",
+        "protobuf.text.nuspec"
+      ]
+    },
+    "SharpZipLib/1.4.0": {
+      "sha512": "CdkbBSPIpHD8xBlu+8kDJiqc1Tf9iV89BObnqcvEbwysXSj5h1MfaeLgeeaxPZmi7CTJO8FDofBBNxBW0Vml7A==",
+      "type": "package",
+      "path": "sharpziplib/1.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "images/sharpziplib-nuget-256x256.png",
+        "lib/net6.0/ICSharpCode.SharpZipLib.dll",
+        "lib/net6.0/ICSharpCode.SharpZipLib.pdb",
+        "lib/net6.0/ICSharpCode.SharpZipLib.xml",
+        "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll",
+        "lib/netstandard2.0/ICSharpCode.SharpZipLib.pdb",
+        "lib/netstandard2.0/ICSharpCode.SharpZipLib.xml",
+        "lib/netstandard2.1/ICSharpCode.SharpZipLib.dll",
+        "lib/netstandard2.1/ICSharpCode.SharpZipLib.pdb",
+        "lib/netstandard2.1/ICSharpCode.SharpZipLib.xml",
+        "sharpziplib.1.4.0.nupkg.sha512",
+        "sharpziplib.nuspec"
+      ]
+    },
+    "SkiaSharp/2.88.8": {
+      "sha512": "bRkp3uKp5ZI8gXYQT57uKwil1uobb2p8c69n7v5evlB/2JNcMAXVcw9DZAP5Ig3WSvgzGm2YSn27UVeOi05NlA==",
+      "type": "package",
+      "path": "skiasharp/2.88.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "interactive-extensions/dotnet/SkiaSharp.DotNet.Interactive.dll",
+        "lib/monoandroid1.0/SkiaSharp.dll",
+        "lib/monoandroid1.0/SkiaSharp.pdb",
+        "lib/monoandroid1.0/SkiaSharp.xml",
+        "lib/net462/SkiaSharp.dll",
+        "lib/net462/SkiaSharp.pdb",
+        "lib/net462/SkiaSharp.xml",
+        "lib/net6.0-android30.0/SkiaSharp.dll",
+        "lib/net6.0-android30.0/SkiaSharp.pdb",
+        "lib/net6.0-android30.0/SkiaSharp.xml",
+        "lib/net6.0-ios13.6/SkiaSharp.dll",
+        "lib/net6.0-ios13.6/SkiaSharp.pdb",
+        "lib/net6.0-ios13.6/SkiaSharp.xml",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.dll",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.pdb",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.xml",
+        "lib/net6.0-macos10.15/SkiaSharp.dll",
+        "lib/net6.0-macos10.15/SkiaSharp.pdb",
+        "lib/net6.0-macos10.15/SkiaSharp.xml",
+        "lib/net6.0-tizen7.0/SkiaSharp.dll",
+        "lib/net6.0-tizen7.0/SkiaSharp.pdb",
+        "lib/net6.0-tizen7.0/SkiaSharp.xml",
+        "lib/net6.0-tvos13.4/SkiaSharp.dll",
+        "lib/net6.0-tvos13.4/SkiaSharp.pdb",
+        "lib/net6.0-tvos13.4/SkiaSharp.xml",
+        "lib/net6.0/SkiaSharp.dll",
+        "lib/net6.0/SkiaSharp.pdb",
+        "lib/net6.0/SkiaSharp.xml",
+        "lib/netcoreapp3.1/SkiaSharp.dll",
+        "lib/netcoreapp3.1/SkiaSharp.pdb",
+        "lib/netcoreapp3.1/SkiaSharp.xml",
+        "lib/netstandard1.3/SkiaSharp.dll",
+        "lib/netstandard1.3/SkiaSharp.pdb",
+        "lib/netstandard1.3/SkiaSharp.xml",
+        "lib/netstandard2.0/SkiaSharp.dll",
+        "lib/netstandard2.0/SkiaSharp.pdb",
+        "lib/netstandard2.0/SkiaSharp.xml",
+        "lib/netstandard2.1/SkiaSharp.dll",
+        "lib/netstandard2.1/SkiaSharp.pdb",
+        "lib/netstandard2.1/SkiaSharp.xml",
+        "lib/tizen40/SkiaSharp.dll",
+        "lib/tizen40/SkiaSharp.pdb",
+        "lib/tizen40/SkiaSharp.xml",
+        "lib/uap10.0.10240/SkiaSharp.dll",
+        "lib/uap10.0.10240/SkiaSharp.pdb",
+        "lib/uap10.0.10240/SkiaSharp.xml",
+        "lib/uap10.0.16299/SkiaSharp.dll",
+        "lib/uap10.0.16299/SkiaSharp.pdb",
+        "lib/uap10.0.16299/SkiaSharp.xml",
+        "lib/xamarinios1.0/SkiaSharp.dll",
+        "lib/xamarinios1.0/SkiaSharp.pdb",
+        "lib/xamarinios1.0/SkiaSharp.xml",
+        "lib/xamarinmac2.0/SkiaSharp.dll",
+        "lib/xamarinmac2.0/SkiaSharp.pdb",
+        "lib/xamarinmac2.0/SkiaSharp.xml",
+        "lib/xamarintvos1.0/SkiaSharp.dll",
+        "lib/xamarintvos1.0/SkiaSharp.pdb",
+        "lib/xamarintvos1.0/SkiaSharp.xml",
+        "lib/xamarinwatchos1.0/SkiaSharp.dll",
+        "lib/xamarinwatchos1.0/SkiaSharp.pdb",
+        "lib/xamarinwatchos1.0/SkiaSharp.xml",
+        "skiasharp.2.88.8.nupkg.sha512",
+        "skiasharp.nuspec"
+      ]
+    },
+    "SkiaSharp.NativeAssets.Linux.NoDependencies/2.88.8": {
+      "sha512": "/DoKtdyvRgCC5GR/SH+ps3ZiOjmf0BYpAyrhWQELFOO1hdcqddrDVJjDNCOJ41vV+NlS5b3kcDoZZ7jLhFjyXg==",
+      "type": "package",
+      "path": "skiasharp.nativeassets.linux.nodependencies/2.88.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/net462/SkiaSharp.NativeAssets.Linux.NoDependencies.targets",
+        "buildTransitive/net462/SkiaSharp.NativeAssets.Linux.NoDependencies.targets",
+        "lib/net462/_._",
+        "lib/net6.0/_._",
+        "lib/netcoreapp3.1/_._",
+        "lib/netstandard1.3/_._",
+        "runtimes/linux-arm/native/libSkiaSharp.so",
+        "runtimes/linux-arm64/native/libSkiaSharp.so",
+        "runtimes/linux-musl-x64/native/libSkiaSharp.so",
+        "runtimes/linux-x64/native/libSkiaSharp.so",
+        "skiasharp.nativeassets.linux.nodependencies.2.88.8.nupkg.sha512",
+        "skiasharp.nativeassets.linux.nodependencies.nuspec"
+      ]
+    },
+    "SkiaSharp.NativeAssets.macOS/2.88.8": {
+      "sha512": "6Kn5TSkKlfyS6azWHF3Jk2sW5C4jCE5uSshM/5AbfFrR+5n6qM5XEnz9h4VaVl7LTxBvHvMkuPb/3bpbq0vxTw==",
+      "type": "package",
+      "path": "skiasharp.nativeassets.macos/2.88.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/net462/SkiaSharp.NativeAssets.macOS.targets",
+        "build/net6.0-macos10.15/SkiaSharp.NativeAssets.macOS.targets",
+        "build/xamarinmac2.0/SkiaSharp.NativeAssets.macOS.targets",
+        "buildTransitive/net462/SkiaSharp.NativeAssets.macOS.targets",
+        "buildTransitive/net6.0-macos10.15/SkiaSharp.NativeAssets.macOS.targets",
+        "buildTransitive/xamarinmac2.0/SkiaSharp.NativeAssets.macOS.targets",
+        "lib/net462/_._",
+        "lib/net6.0-macos10.15/_._",
+        "lib/net6.0/_._",
+        "lib/netcoreapp3.1/_._",
+        "lib/netstandard1.3/_._",
+        "lib/xamarinmac2.0/_._",
+        "runtimes/osx/native/libSkiaSharp.dylib",
+        "skiasharp.nativeassets.macos.2.88.8.nupkg.sha512",
+        "skiasharp.nativeassets.macos.nuspec"
+      ]
+    },
+    "SkiaSharp.NativeAssets.Win32/2.88.8": {
+      "sha512": "O9QXoWEXA+6cweR4h3BOnwMz+pO9vL9mXdjLrpDd0w1QzCgWmLQBxa1VgySDITiH7nQndrDG1h6937zm9pLj1Q==",
+      "type": "package",
+      "path": "skiasharp.nativeassets.win32/2.88.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/net462/SkiaSharp.NativeAssets.Win32.targets",
+        "buildTransitive/net462/SkiaSharp.NativeAssets.Win32.targets",
+        "lib/net462/_._",
+        "lib/net6.0/_._",
+        "lib/netcoreapp3.1/_._",
+        "lib/netstandard1.3/_._",
+        "runtimes/win-arm64/native/libSkiaSharp.dll",
+        "runtimes/win-x64/native/libSkiaSharp.dll",
+        "runtimes/win-x86/native/libSkiaSharp.dll",
+        "skiasharp.nativeassets.win32.2.88.8.nupkg.sha512",
+        "skiasharp.nativeassets.win32.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore/6.6.2": {
       "sha512": "+NB4UYVYN6AhDSjW0IJAd1AGD8V33gemFNLPaxKTtPkHB+HaKAKf9MGAEUPivEWvqeQfcKIw8lJaHq6LHljRuw==",
       "type": "package",
@@ -4148,6 +5845,26 @@
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
+    "System.Buffers/4.6.0": {
+      "sha512": "lN6tZi7Q46zFzAbRYXTIvfXcyvQQgxnY7Xm6C6xQ9784dEL1amjM6S6Iw4ZpsvesAKnRVsM4scrDQaDqSClkjA==",
+      "type": "package",
+      "path": "system.buffers/4.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "buildTransitive/net461/System.Buffers.targets",
+        "buildTransitive/net462/_._",
+        "lib/net462/System.Buffers.dll",
+        "lib/net462/System.Buffers.xml",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard2.0/System.Buffers.dll",
+        "lib/netstandard2.0/System.Buffers.xml",
+        "system.buffers.4.6.0.nupkg.sha512",
+        "system.buffers.nuspec"
+      ]
+    },
     "System.ClientModel/1.0.0": {
       "sha512": "I3CVkvxeqFYjIVEP59DnjbeoGNfo/+SZrCLpRz2v/g0gpCHaEMPtWSY0s9k/7jR1rAsLNg2z2u1JRB76tPjnIw==",
       "type": "package",
@@ -4166,39 +5883,45 @@
         "system.clientmodel.nuspec"
       ]
     },
-    "System.CodeDom/6.0.0": {
-      "sha512": "CPc6tWO1LAer3IzfZufDBRL+UZQcj5uS207NHALQzP84Vp/z6wF0Aa0YZImOQY8iStY0A2zI/e3ihKNPfUm8XA==",
+    "System.CodeDom/8.0.0": {
+      "sha512": "WTlRjL6KWIMr/pAaq3rYqh0TJlzpouaQ/W1eelssHgtlwHAH25jXTkUphTYx9HaIIf7XA6qs/0+YhtLEQRkJ+Q==",
       "type": "package",
-      "path": "system.codedom/6.0.0",
+      "path": "system.codedom/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.CodeDom.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/System.CodeDom.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/System.CodeDom.dll",
-        "lib/net461/System.CodeDom.xml",
+        "lib/net462/System.CodeDom.dll",
+        "lib/net462/System.CodeDom.xml",
         "lib/net6.0/System.CodeDom.dll",
         "lib/net6.0/System.CodeDom.xml",
+        "lib/net7.0/System.CodeDom.dll",
+        "lib/net7.0/System.CodeDom.xml",
+        "lib/net8.0/System.CodeDom.dll",
+        "lib/net8.0/System.CodeDom.xml",
         "lib/netstandard2.0/System.CodeDom.dll",
         "lib/netstandard2.0/System.CodeDom.xml",
-        "system.codedom.6.0.0.nupkg.sha512",
+        "system.codedom.8.0.0.nupkg.sha512",
         "system.codedom.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Collections.Immutable/7.0.0": {
-      "sha512": "dQPcs0U1IKnBdRDBkrCTi1FoajSTBzLcVTpjO4MBCMC7f4pDOIPzgBoX8JjG7X6uZRJ8EBxsi8+DR1JuwjnzOQ==",
+    "System.Collections.Immutable/8.0.0": {
+      "sha512": "AurL6Y5BA1WotzlEvVaIDpqzpIPvYnnldxru8oXJU2yFxFUy3+pNXjXd1ymO+RA0rq0+590Q8gaz2l3Sr7fmqg==",
       "type": "package",
-      "path": "system.collections.immutable/7.0.0",
+      "path": "system.collections.immutable/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
-        "README.md",
+        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.Collections.Immutable.targets",
         "buildTransitive/net462/_._",
@@ -4210,9 +5933,11 @@
         "lib/net6.0/System.Collections.Immutable.xml",
         "lib/net7.0/System.Collections.Immutable.dll",
         "lib/net7.0/System.Collections.Immutable.xml",
+        "lib/net8.0/System.Collections.Immutable.dll",
+        "lib/net8.0/System.Collections.Immutable.xml",
         "lib/netstandard2.0/System.Collections.Immutable.dll",
         "lib/netstandard2.0/System.Collections.Immutable.xml",
-        "system.collections.immutable.7.0.0.nupkg.sha512",
+        "system.collections.immutable.8.0.0.nupkg.sha512",
         "system.collections.immutable.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -4521,6 +6246,50 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
+    "System.IO.FileSystem.AccessControl/5.0.0": {
+      "sha512": "SxHB3nuNrpptVk+vZ/F+7OHEpoHUIKKMl02bUmYHQr1r+glbZQxs7pRtsf4ENO29TVm2TH3AEeep2fJcy92oYw==",
+      "type": "package",
+      "path": "system.io.filesystem.accesscontrol/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net46/System.IO.FileSystem.AccessControl.dll",
+        "lib/net461/System.IO.FileSystem.AccessControl.dll",
+        "lib/net461/System.IO.FileSystem.AccessControl.xml",
+        "lib/netstandard1.3/System.IO.FileSystem.AccessControl.dll",
+        "lib/netstandard2.0/System.IO.FileSystem.AccessControl.dll",
+        "lib/netstandard2.0/System.IO.FileSystem.AccessControl.xml",
+        "ref/net46/System.IO.FileSystem.AccessControl.dll",
+        "ref/net461/System.IO.FileSystem.AccessControl.dll",
+        "ref/net461/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/System.IO.FileSystem.AccessControl.dll",
+        "ref/netstandard1.3/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/de/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/es/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/fr/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/it/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/ja/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/ko/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/ru/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/zh-hans/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard1.3/zh-hant/System.IO.FileSystem.AccessControl.xml",
+        "ref/netstandard2.0/System.IO.FileSystem.AccessControl.dll",
+        "ref/netstandard2.0/System.IO.FileSystem.AccessControl.xml",
+        "runtimes/win/lib/net46/System.IO.FileSystem.AccessControl.dll",
+        "runtimes/win/lib/net461/System.IO.FileSystem.AccessControl.dll",
+        "runtimes/win/lib/net461/System.IO.FileSystem.AccessControl.xml",
+        "runtimes/win/lib/netstandard1.3/System.IO.FileSystem.AccessControl.dll",
+        "runtimes/win/lib/netstandard2.0/System.IO.FileSystem.AccessControl.dll",
+        "runtimes/win/lib/netstandard2.0/System.IO.FileSystem.AccessControl.xml",
+        "system.io.filesystem.accesscontrol.5.0.0.nupkg.sha512",
+        "system.io.filesystem.accesscontrol.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.IO.Pipelines/9.0.1": {
       "sha512": "uXf5o8eV/gtzDQY4lGROLFMWQvcViKcF8o4Q6KpIOjloAQXrnscQSu6gTxYJMHuNJnh7szIF9AzkaEq+zDLoEg==",
       "type": "package",
@@ -4549,27 +6318,24 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Memory/4.5.4": {
-      "sha512": "1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+    "System.Memory/4.6.0": {
+      "sha512": "OEkbBQoklHngJ8UD8ez2AERSk2g+/qpAaSWWCBFbpH727HxDq5ydVkuncBaKcKfwRqXGWx64dS6G1SUScMsitg==",
       "type": "package",
-      "path": "system.memory/4.5.4",
+      "path": "system.memory/4.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Memory.dll",
-        "lib/net461/System.Memory.xml",
+        "Icon.png",
+        "PACKAGE.md",
+        "buildTransitive/net461/System.Memory.targets",
+        "buildTransitive/net462/_._",
+        "lib/net462/System.Memory.dll",
+        "lib/net462/System.Memory.xml",
         "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.1/System.Memory.dll",
-        "lib/netstandard1.1/System.Memory.xml",
         "lib/netstandard2.0/System.Memory.dll",
         "lib/netstandard2.0/System.Memory.xml",
-        "ref/netcoreapp2.1/_._",
-        "system.memory.4.5.4.nupkg.sha512",
-        "system.memory.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "system.memory.4.6.0.nupkg.sha512",
+        "system.memory.nuspec"
       ]
     },
     "System.Memory.Data/1.0.2": {
@@ -4588,6 +6354,36 @@
         "lib/netstandard2.0/System.Memory.Data.xml",
         "system.memory.data.1.0.2.nupkg.sha512",
         "system.memory.data.nuspec"
+      ]
+    },
+    "System.Numerics.Tensors/8.0.0": {
+      "sha512": "fhODzTe9ON9IzmRfyVeA6L8yXOciMtpq1YufkRVBliggcVKZE+XDxqIn46+yF4PWR6wNPuDpXtPpuY86VcKxUA==",
+      "type": "package",
+      "path": "system.numerics.tensors/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Numerics.Tensors.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Numerics.Tensors.targets",
+        "lib/net462/System.Numerics.Tensors.dll",
+        "lib/net462/System.Numerics.Tensors.xml",
+        "lib/net6.0/System.Numerics.Tensors.dll",
+        "lib/net6.0/System.Numerics.Tensors.xml",
+        "lib/net7.0/System.Numerics.Tensors.dll",
+        "lib/net7.0/System.Numerics.Tensors.xml",
+        "lib/net8.0/System.Numerics.Tensors.dll",
+        "lib/net8.0/System.Numerics.Tensors.xml",
+        "lib/netstandard2.0/System.Numerics.Tensors.dll",
+        "lib/netstandard2.0/System.Numerics.Tensors.xml",
+        "system.numerics.tensors.8.0.0.nupkg.sha512",
+        "system.numerics.tensors.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "System.Numerics.Vectors/4.5.0": {
@@ -4637,16 +6433,74 @@
         "version.txt"
       ]
     },
-    "System.Reflection.Metadata/7.0.0": {
-      "sha512": "MclTG61lsD9sYdpNz9xsKBzjsmsfCtcMZYXz/IUr2zlhaTaABonlr1ESeompTgM+Xk+IwtGYU7/voh3YWB/fWw==",
+    "System.Reflection.Emit.Lightweight/4.7.0": {
+      "sha512": "a4OLB4IITxAXJeV74MDx49Oq2+PsF6Sml54XAFv+2RyWwtDBcabzoxiiJRhdhx+gaohLh4hEGCLQyBozXoQPqA==",
       "type": "package",
-      "path": "system.reflection.metadata/7.0.0",
+      "path": "system.reflection.emit.lightweight/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.Reflection.Emit.Lightweight.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.Reflection.Emit.Lightweight.dll",
+        "lib/netstandard1.0/System.Reflection.Emit.Lightweight.xml",
+        "lib/netstandard1.3/System.Reflection.Emit.Lightweight.dll",
+        "lib/netstandard2.0/System.Reflection.Emit.Lightweight.dll",
+        "lib/netstandard2.0/System.Reflection.Emit.Lightweight.xml",
+        "lib/netstandard2.1/_._",
+        "lib/portable-net45+wp8/_._",
+        "lib/wp80/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/System.Reflection.Emit.Lightweight.dll",
+        "ref/netstandard1.0/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/de/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/es/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/fr/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/it/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/ja/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/ko/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/ru/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/zh-hans/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/zh-hant/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard2.0/System.Reflection.Emit.Lightweight.dll",
+        "ref/netstandard2.0/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard2.1/_._",
+        "ref/portable-net45+wp8/_._",
+        "ref/wp80/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.dll",
+        "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.xml",
+        "system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
+        "system.reflection.emit.lightweight.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Reflection.Metadata/8.0.0": {
+      "sha512": "ptvgrFh7PvWI8bcVqG5rsA/weWM09EnthFHR5SCnS6IN+P4mj6rE1lBDC4U8HL9/57htKAqy4KQ3bBj84cfYyQ==",
+      "type": "package",
+      "path": "system.reflection.metadata/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
-        "README.md",
+        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.Reflection.Metadata.targets",
         "buildTransitive/net462/_._",
@@ -4658,9 +6512,11 @@
         "lib/net6.0/System.Reflection.Metadata.xml",
         "lib/net7.0/System.Reflection.Metadata.dll",
         "lib/net7.0/System.Reflection.Metadata.xml",
+        "lib/net8.0/System.Reflection.Metadata.dll",
+        "lib/net8.0/System.Reflection.Metadata.xml",
         "lib/netstandard2.0/System.Reflection.Metadata.dll",
         "lib/netstandard2.0/System.Reflection.Metadata.xml",
-        "system.reflection.metadata.7.0.0.nupkg.sha512",
+        "system.reflection.metadata.8.0.0.nupkg.sha512",
         "system.reflection.metadata.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -4794,29 +6650,26 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
-      "sha512": "/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+    "System.Runtime.CompilerServices.Unsafe/6.1.0": {
+      "sha512": "5o/HZxx6RVqYlhKSq8/zronDkALJZUT2Vz0hx43f0gwe8mwlM0y2nYlqdBwLMzr262Bwvpikeb/yEwkAa5PADg==",
       "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "path": "system.runtime.compilerservices.unsafe/6.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
+        "PACKAGE.md",
+        "buildTransitive/net461/System.Runtime.CompilerServices.Unsafe.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/net461/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/net462/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net462/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/net7.0/_._",
         "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-        "system.runtime.compilerservices.unsafe.nuspec",
-        "useSharedDesignerContext.txt"
+        "system.runtime.compilerservices.unsafe.6.1.0.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec"
       ]
     },
     "System.Security.AccessControl/6.0.0": {
@@ -5258,15 +7111,16 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Threading.Channels/7.0.0": {
-      "sha512": "qmeeYNROMsONF6ndEZcIQ+VxR4Q/TX/7uIVLJqtwIWL7dDWeh0l1UIqgo4wYyjG//5lUNhwkLDSFl+pAWO6oiA==",
+    "System.Threading.Channels/8.0.0": {
+      "sha512": "CMaFr7v+57RW7uZfZkPExsPB6ljwzhjACWW1gfU35Y56rk72B/Wu+sTqxVmGSk4SFUlPc3cjeKND0zktziyjBA==",
       "type": "package",
-      "path": "system.threading.channels/7.0.0",
+      "path": "system.threading.channels/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
+        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.Threading.Channels.targets",
         "buildTransitive/net462/_._",
@@ -5278,11 +7132,13 @@
         "lib/net6.0/System.Threading.Channels.xml",
         "lib/net7.0/System.Threading.Channels.dll",
         "lib/net7.0/System.Threading.Channels.xml",
+        "lib/net8.0/System.Threading.Channels.dll",
+        "lib/net8.0/System.Threading.Channels.xml",
         "lib/netstandard2.0/System.Threading.Channels.dll",
         "lib/netstandard2.0/System.Threading.Channels.xml",
         "lib/netstandard2.1/System.Threading.Channels.dll",
         "lib/netstandard2.1/System.Threading.Channels.xml",
-        "system.threading.channels.7.0.0.nupkg.sha512",
+        "system.threading.channels.8.0.0.nupkg.sha512",
         "system.threading.channels.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -5346,15 +7202,55 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "TensorFlow.NET/0.20.1": {
+      "sha512": "8svOVEjS1CV5JDnUUuFKwvbM2q8KSaqUR7rFo3Ht/duACtY58lZS4Q6hwu2GeWm8gRvhJIrNngIrDbsWMbDvyg==",
+      "type": "package",
+      "path": "tensorflow.net/0.20.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/netstandard2.0/TensorFlow.NET.dll",
+        "lib/netstandard2.0/TensorFlow.NET.xml",
+        "tensorflow.net.0.20.1.nupkg.sha512",
+        "tensorflow.net.nuspec"
+      ]
+    },
+    "TorchSharp/0.102.7": {
+      "sha512": "P4bl1QcZxD+ZLrPjblUSv6MjRLlDWKa6loPZMMfekIubiandR2gdloL4cQZmfblxf5JzaUWwsbcoBqMu1uHZCw==",
+      "type": "package",
+      "path": "torchsharp/0.102.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "buildTransitive/net6.0/TorchSharp.props",
+        "buildTransitive/net6.0/TorchSharp.targets",
+        "lib/net6.0/TorchSharp.dll",
+        "lib/net6.0/TorchSharp.xml",
+        "lib/netstandard2.0/TorchSharp.dll",
+        "lib/netstandard2.0/TorchSharp.xml",
+        "runtimes/linux-x64/native/libLibTorchSharp.so",
+        "runtimes/osx-arm64/native/libLibTorchSharp.dylib",
+        "runtimes/osx-x64/native/libLibTorchSharp.dylib",
+        "runtimes/win-x64/native/LibTorchSharp.dll",
+        "torchsharp.0.102.7.nupkg.sha512",
+        "torchsharp.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 8.0.6",
       "Microsoft.AspNetCore.OpenApi >= 8.0.12",
+      "Microsoft.CodeAnalysis.Common >= 4.9.2",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.1",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.1",
+      "Microsoft.ML >= 4.0.1",
+      "Microsoft.ML.AutoML >= 0.22.1",
+      "Microsoft.ML.TensorFlow >= 4.0.1",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
@@ -5403,6 +7299,10 @@
             "target": "Package",
             "version": "[8.0.12, )"
           },
+          "Microsoft.CodeAnalysis.Common": {
+            "target": "Package",
+            "version": "[4.9.2, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -5418,6 +7318,18 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[9.0.1, )"
+          },
+          "Microsoft.ML": {
+            "target": "Package",
+            "version": "[4.0.1, )"
+          },
+          "Microsoft.ML.AutoML": {
+            "target": "Package",
+            "version": "[0.22.1, )"
+          },
+          "Microsoft.ML.TensorFlow": {
+            "target": "Package",
+            "version": "[4.0.1, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
@@ -5446,5 +7358,47 @@
         "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.112/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: Microsoft.CodeAnalysis.CSharp.Workspaces 4.8.0 requires Microsoft.CodeAnalysis.Common (= 4.8.0) but version Microsoft.CodeAnalysis.Common 4.9.2 was resolved.",
+      "libraryId": "Microsoft.CodeAnalysis.Common",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: Microsoft.CodeAnalysis.CSharp.Workspaces 4.8.0 requires Microsoft.CodeAnalysis.CSharp (= 4.8.0) but version Microsoft.CodeAnalysis.CSharp 4.9.2 was resolved.",
+      "libraryId": "Microsoft.CodeAnalysis.CSharp",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: Microsoft.CodeAnalysis.Workspaces.MSBuild 4.8.0 requires Microsoft.CodeAnalysis.Common (= 4.8.0) but version Microsoft.CodeAnalysis.Common 4.9.2 was resolved.",
+      "libraryId": "Microsoft.CodeAnalysis.Common",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: Microsoft.CodeAnalysis.Workspaces.Common 4.8.0 requires Microsoft.CodeAnalysis.Common (= 4.8.0) but version Microsoft.CodeAnalysis.Common 4.9.2 was resolved.",
+      "libraryId": "Microsoft.CodeAnalysis.Common",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

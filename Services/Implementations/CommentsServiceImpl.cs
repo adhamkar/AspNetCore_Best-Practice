@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using api.Data;
 using api.Entities;
 using api.Services.Interfaces;
+using api.TextClassification.Comment;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,9 +14,11 @@ namespace api.Services.Implementations
     public class CommentsServiceImpl : CommentsService
     {
                 private readonly ApplicationDBContext _context;
-                public CommentsServiceImpl(ApplicationDBContext context)
+                private readonly Prediction _prediction;
+                public CommentsServiceImpl(ApplicationDBContext context, Prediction prediction)
                 {
                     _context = context;
+                    _prediction = prediction;
                     
                 }
 
@@ -34,6 +37,12 @@ namespace api.Services.Implementations
         public async Task<Comments?> GetCommentByIdAsync(int id)
         {
             return await _context.Comments.FirstOrDefaultAsync(i => i.Id == id);
+        }
+
+        public int Predicte(string comment)
+        {
+            int score= _prediction.CommentPrediction(comment);
+            return score;
         }
     }
 }

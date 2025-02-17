@@ -1,6 +1,7 @@
 using api.Data;
 using api.Services.Implementations;
 using api.Services.Interfaces;
+using api.TextClassification.Comment;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ builder.Services.AddDbContext<ApplicationDBContext>(options=>{
 builder.Services.AddControllers();
 builder.Services.AddScoped<ProductsService,ProductsServiceImpl>();
 builder.Services.AddScoped<CommentsService,CommentsServiceImpl>();
+builder.Services.AddScoped<Prediction>();
 builder.Services.AddControllers().AddNewtonsoftJson(op=>{
     op.SerializerSettings.ReferenceLoopHandling=Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 });

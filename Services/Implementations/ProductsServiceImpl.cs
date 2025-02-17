@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using api.Data;
 using api.DTOs.Products;
 using api.Entities;
+using api.Helpers;
 using api.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -41,10 +42,18 @@ namespace api.Services.Implementations
             return await _context.Products.Include(c=>c.Comments).FirstOrDefaultAsync(i=>i.Id==id);
         }
 
-        public Task<List<Products>> GetProductsAsync()
+        public async Task<List<Products>> GetProductsAsync(ProductQueryObject queryObj)
         {
+            var products=_context.Products.Include(c=>c.Comments).AsQueryable();
+
+            if(!string.IsNullOrWhiteSpace(queryObj.Name)) products=products.Where(x=>x.Name.Contains(queryObj.Name));
+            if(queryObj.Price.HasValue && !decimal.IsNegative(queryObj.Price.Value)) products=products.Where(x=>x.Price==queryObj.Price);  
+            if(queryObj.QuantityStock.HasValue && !int.IsNegative(queryObj.QuantityStock.Value)) products=products.Where(x=>x.QuantityStock==queryObj.QuantityStock);
+
+            var skipNumber=(queryObj.PageNumber-1)*queryObj.PageSize;
+            return await products.Skip(skipNumber).Take(queryObj.PageSize).ToListAsync();
             
-            return _context.Products.Include(c=>c.Comments).ToListAsync();
+            //return _context.Products.Include(c=>c.Comments).ToListAsync();
         }
 
         public Task<bool> ProductExists(int id)

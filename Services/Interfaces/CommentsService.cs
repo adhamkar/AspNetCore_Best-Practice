@@ -11,5 +11,6 @@ namespace api.Services.Interfaces
         Task<List<Comments>> GetAllCommentsAsync();
         Task<Comments> CreateCommentAsync(Comments comment);
         Task<Comments> GetCommentByIdAsync(int id);
+        int Predicte(string comment);
     }
 }

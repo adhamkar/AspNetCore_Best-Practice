@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using api.Data;
 using api.DTOs.Products;
 using api.Entities;
+using api.Helpers;
 using api.Mappers;
 using api.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -24,14 +25,21 @@ namespace api.Controllers
                 _productsService=productsService;
             }
 
-            [HttpGet]
+       /*      [HttpGet]
             public async Task<IActionResult> GetAll(){
 
                 var products=await _productsService.GetProductsAsync();
                 var productDTO= products.Select(s=>s.ToProductDtos());
                 return Ok(productDTO);
+            } */
+             [HttpGet]
+            public async Task<IActionResult> GetAllProducts([FromQuery] ProductQueryObject productQueryObject){
+
+                var products=await _productsService.GetProductsAsync(productQueryObject);
+                var productDTO= products.Select(s=>s.ToProductDtos());
+                return Ok(productDTO);
             }
-            [HttpGet("{id}")]
+            [HttpGet("{id:int}")]
             public async Task<IActionResult> GetById([FromRoute] int id){
                 var product=await _productsService.GetProductByIdAsync(id);
                 if(product !=null)  return Ok(product.ToProductDtos());
@@ -39,11 +47,12 @@ namespace api.Controllers
             }
             [HttpPost]
             public async Task<IActionResult> CreateProduct([FromBody]CreateProductDTO productDTO){
+                if(!ModelState.IsValid) return BadRequest(ModelState);
                 var product=productDTO.ToProduct();
                 await _productsService.CreateProductAsync(product);
                 return CreatedAtAction(nameof(GetById),new {id=product.Id},product.ToProductDtos());
             }
-            [HttpDelete("{id}")]
+            [HttpDelete("{id:int}")]
             public async void DeleteProduct([FromRoute] int id){
                 var product=await _context.Products.FindAsync(id);
                 if(product!=null){
@@ -53,8 +62,9 @@ namespace api.Controllers
             }
             
             [HttpPatch]
-            [Route("{id}")]
+            [Route("{id:int}")]
             public async Task<IActionResult> UpodateProduct([FromRoute] int id,[FromBody] UpdateProductRequestDTO productRequestDTO){
+                if(!ModelState.IsValid) return BadRequest(ModelState);
                 var product=await _productsService.UpdateProductAsync(id,productRequestDTO);
                 if(product==null) return NotFound();
                 return Ok(product.ToProductDtos());
