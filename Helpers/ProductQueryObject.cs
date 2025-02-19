@@ -12,6 +12,8 @@ namespace api.Helpers
         public decimal? Price { get; set; }=null;
         public int PageNumber { get; set; }=1;
         public int PageSize { get; set; }=10;
+        public string? Description { get; set; }=null;
+
 
     }
 }

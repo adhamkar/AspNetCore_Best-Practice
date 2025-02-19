@@ -20,6 +20,17 @@ builder.Services.AddScoped<Prediction>();
 builder.Services.AddControllers().AddNewtonsoftJson(op=>{
     op.SerializerSettings.ReferenceLoopHandling=Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 });
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin();
+            builder.AllowAnyMethod();
+            builder.AllowAnyHeader();
+        });
+}); 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -32,6 +43,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapControllers();
+app.UseCors("AllowSpecificOrigin");
 app.Run();
 
 

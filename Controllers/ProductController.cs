@@ -8,6 +8,7 @@ using api.Entities;
 using api.Helpers;
 using api.Mappers;
 using api.Services.Interfaces;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,7 @@ namespace api.Controllers
 {
         [Route("/api/products")]
         [ApiController]
+        [EnableCors("AllowAllOrigins")] 
         public class ProductController: ControllerBase
         {
             private readonly ApplicationDBContext _context;
@@ -32,7 +34,7 @@ namespace api.Controllers
                 var productDTO= products.Select(s=>s.ToProductDtos());
                 return Ok(productDTO);
             } */
-             [HttpGet]
+            [HttpGet]
             public async Task<IActionResult> GetAllProducts([FromQuery] ProductQueryObject productQueryObject){
 
                 var products=await _productsService.GetProductsAsync(productQueryObject);
