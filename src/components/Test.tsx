@@ -5,15 +5,13 @@ import {  DeleteTwoTone, EditTwoTone } from '@mui/icons-material';
 import { InfoCircleOutlined } from '@ant-design/icons';
 
 
-
 interface DataType {
   id: number;
   name: string;
   description: string;
   price: number;
   quantityStock: number;
-  tags: string[];
-}
+} 
 
 
 const Test: React.FC = () => {
@@ -22,17 +20,19 @@ const Test: React.FC = () => {
  
 
   const [products, setProducts] = useState<DataType[]>([]);
-  const [searchParams, setSearchParams] = useState({ name: '',description: '' ,price: '', quantityStock: '' });
+  const [searchParams, setSearchParams] = useState({ name: '',description: '' ,price: '', quantityStock: '', pageSize: 5, pageNumber: 1 });
+  const [total, setTotal] = useState(0); 
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [searchParams.pageNumber, searchParams.pageSize]);
   
   const fetchProducts = async (filters = {}) => {
     try {
       console.log('Sending API request with filters:', filters);
       const data = await getProducts(filters);
       setProducts(data);
+      setTotal(data.length);
     } catch (error) {
       console.error('Error fetching products:', error);
     }
@@ -41,49 +41,58 @@ const Test: React.FC = () => {
     fetchProducts(searchParams);
   };
   const handleClear = () => {
-    setSearchParams({ name: '',description:'', price: '', quantityStock: '' });
+    setSearchParams({ name: '',description:'', price: '', quantityStock: '', pageSize: searchParams.pageSize, pageNumber: searchParams.pageNumber });
     fetchProducts();
   }
 
-  const columns: TableProps<DataType>['columns'] = [
-    {
-      title: 'ID',
-      dataIndex: 'id',
-      key: 'id',
-    },
-    {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
-      render: (text) => <a>{text}</a>,
-    },
-    {
-      title: 'Description',
-      dataIndex: 'description',
-      key: 'description',
-      render: (text)=><a >{text}</a>
-    },
-    {
-      title: 'Price',
-      dataIndex: 'price',
-      key: 'price',
-    },
-    {
-      title: 'Quantity Stock',
-      dataIndex: 'quantityStock',
-      key: 'quantityStock',
-    },
-    {
-      title: 'Action',
-      key: 'action',
-      render: (_, record) => (
-        <Space size="middle">
-          <a><EditTwoTone /></a>
-          <a><DeleteTwoTone /></a>
-        </Space>
-      ),
-    },
-  ];
+  
+
+    const columns: TableProps<DataType>['columns'] = [
+      {
+        title: 'ID',
+        dataIndex: 'id',
+        key: 'id',
+      },
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        key: 'name',
+        render: (text) => <a>{text}</a>,
+      },
+      {
+        title: 'Description',
+        dataIndex: 'description',
+        key: 'description',
+        
+        render: (text)=><span style={{ display: 'inline-block',
+         maxWidth: '300px', 
+         whiteSpace: 'nowrap', 
+         overflow: 'hidden',
+         textOverflow: 'ellipsis' }}>
+        {text}
+      </span>
+      },
+      {
+        title: 'Price',
+        dataIndex: 'price',
+        key: 'price',
+      },
+      {
+        title: 'Quantity Stock',
+        dataIndex: 'quantityStock',
+        key: 'quantityStock',
+      },
+      {
+        title: 'Action',
+        key: 'action',
+        render: (_, record) => (
+          <Space size="middle">
+            <a><EditTwoTone /></a>
+            <a><DeleteTwoTone /></a>
+          </Space>
+        ),
+      },
+    ];
   return  <div>
     <div style={{
       //marginLeft:"90rem",
@@ -159,7 +168,18 @@ const Test: React.FC = () => {
       </Form.Item>
       </div>
     </Form>
-    <Table columns={columns} dataSource={products } rowKey="id"/>
+    <Table columns={columns} dataSource={products } rowKey="id"
+    pagination={{
+      pageSize: searchParams.pageSize,
+      current: searchParams.pageNumber,
+      total: products.length,
+      onChange: (page, pageSize) => {
+        setSearchParams({ ...searchParams, pageSize, pageNumber: page });
+        fetchProducts({ ...searchParams, pageSize, pageNumber: page });
+      }
+    }}
+    />
+    
     
   </div>
   
